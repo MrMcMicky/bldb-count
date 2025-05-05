@@ -1,0 +1,42 @@
+name: Deploy BLDB-COUNT
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'html/bldb-count/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Deploy files via rsync over SSH as root
+      uses: easingthemes/ssh-deploy@main
+      with:
+        SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+        ARGS: "-avz --delete"
+        SOURCE: "html/bldb-count/"
+        REMOTE_HOST: ${{ secrets.VPS_HOST }}
+        REMOTE_USER: root
+        TARGET: "/var/www/html/bldb-count/"
+
+    - name: Set Permissions on Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: root
+        key: ${{ secrets.VPS_SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          cd /var/www/html/bldb-count
+          echo "Setting permissions..."
+          chown -R www-data:www-data /var/www/html/bldb-count
+          find /var/www/html/bldb-count -type d -exec chmod 755 {} \;
+          find /var/www/html/bldb-count -type f -exec chmod 644 {} \;
+          echo "Permissions set."
