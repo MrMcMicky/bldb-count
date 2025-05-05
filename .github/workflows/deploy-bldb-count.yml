@@ -1,11 +1,8 @@
-name: Deploy BLDB-COUNT
+name: Deploy to Production Server
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'html/bldb-count/**'
+    branches: [ "main" ]
 
 jobs:
   deploy:
@@ -13,30 +10,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
-    - name: Deploy files via rsync over SSH as root
-      uses: easingthemes/ssh-deploy@main
+    - name: SSH & Deploy
+      uses: appleboy/ssh-action@v1
       with:
-        SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
-        ARGS: "-avz --delete"
-        SOURCE: "html/bldb-count/"
-        REMOTE_HOST: ${{ secrets.VPS_HOST }}
-        REMOTE_USER: root
-        TARGET: "/var/www/html/bldb-count/"
-
-    - name: Set Permissions on Server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: root
-        key: ${{ secrets.VPS_SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /var/www/html/bldb-count
-          echo "Setting permissions..."
-          chown -R www-data:www-data /var/www/html/bldb-count
-          find /var/www/html/bldb-count -type d -exec chmod 755 {} \;
-          find /var/www/html/bldb-count -type f -exec chmod 644 {} \;
-          echo "Permissions set."
+          git pull origin main
+          sudo systemctl restart apache2
