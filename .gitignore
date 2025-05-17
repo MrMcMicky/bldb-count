@@ -1,0 +1,15 @@
+# Betriebssystem-spezifische Dateien
+.DS_Store
+Thumbs.db
+
+# Lokale Editor-Konfigurationen (Beispiele)
+.vscode/
+.idea/
+
+# Log-Dateien (falls vorhanden)
+*.log
+logs/
+
+# Abhängigkeiten-Ordner (falls später hinzugefügt)
+node_modules/
+vendor/

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Baden liest die Bibel - Countdown</title>
+    <meta name="description" content="Baden liest die Bibel - Entdecke die Bibel neu auf kreativen Wegen. Vom 16. Oktober bis 21. November 2025 finden in Baden vielfältige Begegnungen mit der Bibel statt.">
+    <meta name="theme-color" content="#E52950">
+    
+    <!-- Favicons für verschiedene Plattformen -->
+    <link rel="icon" type="image/png" href="images/favicon-white.png">
+    <link rel="apple-touch-icon" href="images/favicon-white.png">
+    
+    <!-- Preload wichtiger Ressourcen -->
+    <link rel="preload" href="css/styles.min.css" as="style">
+    <link rel="preload" href="js/countdown.min.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" as="style">
+    
+    <!-- Fonts und Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+    
+    <!-- Inline Critical CSS für schnelleres Rendering -->
+    <style>
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9FD0B5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-text">
+                        <h1>BADEN LIEST<br>DIE BIBEL</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>ENTDECKE DIE BIBEL NEU – AUF KREATIVEN WEGEN.</h2>
+                <h3>16. OKTOBER – 21. NOVEMBER 2025</h3>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro">
+                <p>Entdecken Sie das «Buch der Bücher» (neu)! Vom 16. Oktober bis 21. November 2025 finden in Baden vielfältige Begegnungen mit der Bibel statt. Die Palette der Angebote ist breit - von Theateraufführungen über kreative Ateliers bis hin zu Gesprächen an ungewöhnlichen Orten.</p>
+            </section>
+
+            <section class="countdown-section">
+                <h2>Die vollständige Webseite mit Anmeldemöglichkeit startet in:</h2>
+                <div id="countdown">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <p class="label">Tage</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <p class="label">Stunden</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <p class="label">Minuten</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <p class="label">Sekunden</p>
+                    </div>
+                </div>
+                <p class="countdown-info">Besuchen Sie uns ab dem 1. Juni 2025 wieder, um alle Details zu den spannenden Ateliers zu entdecken und sich anzumelden!</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Ein Projekt der Arbeitsgemeinschaft christlicher Kirchen im Aargau (AGCK-AG)</p>
+            <p class="website">www.badenliestdiebibel.ch</p>
+        </footer>
+    </div>
+
+    <!-- Produktivversion des Countdowns - Minifizierte Version für bessere Performance -->
+    <script src="js/countdown.min.js" defer></script>
+    
+    <!-- Testversion des Countdowns (für Entwickler) -->
+    <!-- <script src="js/countdown-test.js" defer></script> -->
+</body>
+</html>
