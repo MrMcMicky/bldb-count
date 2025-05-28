@@ -98,10 +98,10 @@
                 </div>
                 <p class="countdown-info">Besuchen Sie uns ab dem 1. Juni 2025 wieder, um alle Details zu den spannenden Ateliers zu entdecken und sich anzumelden!</p>
                 <p class="press-link-container">
-                    <a href="pressetext.html" class="press-link">Zum Pressetext</a>
+                    <a href="#" id="togglePressTextBtn" class="press-link">Zum Pressetext</a>
                 </p>
             </section>
-<section class="press-text">
+<section class="press-text" id="pressTextSection" style="display: none;">
                 <h2>Grosse Vorfreude auf 'Baden liest die Bibel'</h2>
                 <p>Man stelle sich das vor: Ein OK lanciert ein Projekt rund um die Bibel. Und dann sind im Handumdrehen die Finanzen geklärt, die Leute machen mit und die Verantwortlichen werden mit genialen Ideen fast überrannt. Genau so positiv entwickeln sich die Vorbereitungen auf 'Baden liest die Bibel' der Arbeitsge-meinschaft Christlicher Kirchen Baden, AGCK.</p>
                 <p>Manche sagen, die Bibel sei ein Buch mit sieben Siegeln. Das mag sogar zutreffen. Aber wenn man ver-schiedene Schlüssel ausprobieren kann, öffnet sie sich für Leser- und Hörer*innen. Bis zum 16. Oktober kann man sich in rund 15 Ateliers einschreiben, welche einen Zugang zu einem Aspekt der Bibel er-schliessen können. Man trifft sich bis zu vier Mal, ehe das Projekt Mitte November mit einer Schlussveran-staltung abgeschlossen wird.</p>
@@ -123,5 +123,22 @@
     
     <!-- Testversion des Countdowns (für Entwickler) -->
     <!-- <script src="js/countdown-test.js" defer></script> -->
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('togglePressTextBtn');
+            const pressTextSection = document.getElementById('pressTextSection');
+
+            if (toggleButton && pressTextSection) {
+                toggleButton.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    if (pressTextSection.style.display === 'none' || pressTextSection.style.display === '') {
+                        pressTextSection.style.display = 'block';
+                    } else {
+                        pressTextSection.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
