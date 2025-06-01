@@ -14,6 +14,7 @@
     --accent-color: #FF9E8F; /* Korall für Akzente */
     --text-color: #333333;
     --light-color: #FFFFFF;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -347,5 +348,86 @@ footer p {
     .countdown-item span {
         box-shadow: none;
         animation: none;
+    }
+}
+
+/* Booklet Download Styles */
+.booklet-download {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.booklet-link {
+    display: flex;
+    align-items: center;
+    background: var(--light-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+}
+
+.booklet-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.booklet-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.booklet-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.booklet-info p {
+    margin: 0 0 1rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.download-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.booklet-link:hover .download-button {
+    background: #c21e3f;
+}
+
+/* Responsive Booklet Styles */
+@media (max-width: 576px) {
+    .booklet-link {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .booklet-thumb {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .booklet-info h3 {
+        font-size: 1.1rem;
     }
 }

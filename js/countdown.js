@@ -1,6 +1,6 @@
 /**
  * Baden liest die Bibel - Countdown Script
- * Zählt herunter bis zum 1. Juni 2025, 00:00:00 Uhr
+ * Zählt herunter bis zum 3. Juni 2025, 00:00:00 Uhr
  * Optimiert für Performance und Ressourceneffizienz
  */
 
@@ -24,8 +24,8 @@
         minutesElement = document.getElementById('minutes');
         secondsElement = document.getElementById('seconds');
         
-        // Zieldatum festlegen: 1. Juni 2025, 00:00:00
-        const countdownDate = new Date("June 1, 2025 00:00:00").getTime();
+        // Zieldatum festlegen: 3. Juni 2025, 00:00:00
+        const countdownDate = new Date("June 3, 2025 00:00:00").getTime();
         
         // Initial Update durchführen
         updateCountdown(countdownDate);
@@ -117,7 +117,7 @@
         
         // Nach 3 Sekunden weiterleiten
         setTimeout(function() {
-            window.location.href = "https://www.badenliestdiebibel.ch/anmeldung";
+            window.location.href = "https://www.badenliestdiebibel.ch";
         }, 3000);
     }
     
