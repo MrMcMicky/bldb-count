@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Meldung anzeigen, dass die Anmeldung geöffnet ist
             document.querySelector('.countdown-info').innerHTML = 
-                'Sie werden zur Anmeldeseite weitergeleitet...';
+                '<strong>Die Anmeldung ist jetzt geöffnet!</strong><br>Entdecken Sie alle Ateliers und melden Sie sich an.';
             
             // Countdown-Elemente visuell verändern
             const countdownItems = document.querySelectorAll('.countdown-item span');
@@ -80,10 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     location.reload(); // Seite neu laden für weitere Tests
                 }, 3000);
             } else {
-                // In der Produktionsversion: Nach 3 Sekunden zur Anmeldeseite weiterleiten
-                setTimeout(function() {
-                    window.location.href = "https://www.badenliestdiebibel.ch/anmeldung";
-                }, 3000);
+                // Keine Weiterleitung in der Produktionsversion
+                // Seite bleibt stabil
             }
         }
     }

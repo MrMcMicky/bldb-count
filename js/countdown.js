@@ -101,7 +101,8 @@
         const countdownInfo = document.querySelector('.countdown-info');
         if (countdownInfo) {
             countdownInfo.innerHTML = 
-                'Sie werden zur Anmeldeseite weitergeleitet...';
+                '<strong>Die Anmeldung ist jetzt geöffnet!</strong><br>' +
+                'Entdecken Sie alle Ateliers und melden Sie sich an.';
         }
         
         // Visuelle Änderungen für Countdown-Elemente
@@ -114,10 +115,7 @@
             item.style.borderColor = '#248A5B';
         }
         
-        // Nach 3 Sekunden weiterleiten
-        setTimeout(function() {
-            window.location.href = "https://www.badenliestdiebibel.ch";
-        }, 3000);
+        // Keine Weiterleitung - Seite bleibt stabil
     }
     
     /**
