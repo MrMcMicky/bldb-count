@@ -1,6 +1,6 @@
 /**
  * Baden liest die Bibel - Countdown Script
- * Zählt herunter bis zum 4. Juni 2025, 00:00:00 Uhr
+ * Zählt herunter bis zum 4. Juni 2025, 23:59:59 Uhr
  * Optimiert für Performance und Ressourceneffizienz
  */
 
@@ -24,8 +24,8 @@
         minutesElement = document.getElementById('minutes');
         secondsElement = document.getElementById('seconds');
         
-        // Zieldatum festlegen: 4. Juni 2025, 00:00:00
-        const countdownDate = new Date("June 4, 2025 00:00:00").getTime();
+        // Zieldatum festlegen: 4. Juni 2025, 23:59:59
+        const countdownDate = new Date("June 4, 2025 23:59:59").getTime();
         
         // Initial Update durchführen
         updateCountdown(countdownDate);
