@@ -36,22 +36,42 @@
             margin: 0 auto;
             padding: 2rem;
         }
-        .press-link-container {
+        .action-buttons {
             text-align: center;
-            margin-top: 20px;
-            margin-bottom: 30px;
+            margin: 2rem 0;
         }
-        .press-link {
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .action-button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #28a745; /* Ein Grün als Beispiel */
+            padding: 12px 24px;
+            background-color: #28a745;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .press-link:hover {
+        .action-button:hover {
             background-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        @media (max-width: 576px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .action-button {
+                width: 100%;
+                max-width: 280px;
+            }
         }
     </style>
 </head>
@@ -76,6 +96,14 @@
                 <p>Entdecken Sie das «Buch der Bücher» (neu)! Vom 16. Oktober bis 20. November 2025 finden in Baden vielfältige Begegnungen mit der Bibel statt. Die Palette der Angebote ist breit - von Theateraufführungen über kreative Ateliers bis hin zu Gesprächen an ungewöhnlichen Orten.</p>
             </section>
 
+            <!-- Buttons oberhalb des Countdowns -->
+            <section class="action-buttons">
+                <div class="button-container">
+                    <a href="images/booklet_download.pdf" target="_blank" class="action-button">📖 Veranstaltungsbroschüre</a>
+                    <a href="#" id="togglePressTextBtn" class="action-button">📰 Zum Pressetext</a>
+                </div>
+            </section>
+
             <section class="countdown-section">
                 <h2>Die vollständige Webseite mit Anmeldemöglichkeit startet in:</h2>
                 <div id="countdown">
@@ -97,22 +125,6 @@
                     </div>
                 </div>
                 <p class="countdown-info">Besuchen Sie uns ab dem 4. Juni 2025 wieder, um alle Details zu den spannenden Ateliers zu entdecken und sich anzumelden!</p>
-                
-                <!-- Booklet Download -->
-                <div class="booklet-download">
-                    <a href="images/booklet_download.pdf" target="_blank" class="booklet-link">
-                        <img src="images/booklet_thumb.png" alt="Veranstaltungsbroschüre Vorschau" class="booklet-thumb">
-                        <div class="booklet-info">
-                            <h3>Veranstaltungsbroschüre</h3>
-                            <p>Alle Ateliers und Veranstaltungen im Detail</p>
-                            <span class="download-button">PDF herunterladen</span>
-                        </div>
-                    </a>
-                </div>
-                
-                <p class="press-link-container">
-                    <a href="#" id="togglePressTextBtn" class="press-link">Zum Pressetext</a>
-                </p>
             </section>
 <section class="press-text" id="pressTextSection" style="display: none;">
                 <h2>Grosse Vorfreude auf 'Baden liest die Bibel'</h2>
