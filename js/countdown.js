@@ -101,7 +101,6 @@
         const countdownInfo = document.querySelector('.countdown-info');
         if (countdownInfo) {
             countdownInfo.innerHTML = 
-                '<strong>Die Anmeldung ist jetzt geöffnet!</strong><br>' +
                 'Sie werden zur Anmeldeseite weitergeleitet...';
         }
         

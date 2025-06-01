@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Meldung anzeigen, dass die Anmeldung geöffnet ist
             document.querySelector('.countdown-info').innerHTML = 
-                '<strong>Die Anmeldung ist jetzt geöffnet!</strong><br>' +
                 'Sie werden zur Anmeldeseite weitergeleitet...';
             
             // Countdown-Elemente visuell verändern
